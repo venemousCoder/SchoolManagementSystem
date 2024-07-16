@@ -1,0 +1,19 @@
+{
+  "name": "schoolmanagementsystem",
+  "version": "1.0.0",
+  "description": "A robust SMS that eases the workflow of stakeholders in a school",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/venemousCoder/SchoolManagementSystem.git"
+  },
+  "author": "venemousCoder binad Fhadiil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/venemousCoder/SchoolManagementSystem/issues"
+  },
+  "homepage": "https://github.com/venemousCoder/SchoolManagementSystem#readme"
+}
