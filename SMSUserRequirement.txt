@@ -1,0 +1,176 @@
+User requirements:
+
+@Roles:
+
+× Parents
+
+	Activities:
+		~ Should be able to get updates on child's progress through email
+		~ Should be able to schedule meetings with teachers
+		~ Should be able to get child's report sheet
+		~ Should be able to view his/her child's stats (punctuality, cleanliness)
+
+	Model:
+		~ Name
+		~ Email
+		~ Password
+		~ Child [] #R
+		~ Category
+[{
+	class: "Jss1"
+	course: "english"
+},
+{
+	class: "Jss2"
+	course: "literature"
+},
+]
+× Students
+	Activities:
+		~ Should be able to view report sheet
+		~ Should be able to view his/her stats (punctuality, cleanliness)
+		~ Should be able to interact with class administrator and classmates (OPTIONAL)
+		~ Should be able to view scheduled events
+
+	Model:
+		~ Name
+		~ Email
+		~ Current Class
+		~ Student Id
+		~ Password
+		~ Category
+		~ Stats
+		~ Parent's number
+		~ Faction
+		~ Results [] #R
+		~ Active
+
+× Staff:
+	^ Form Master
+		Activities: 
+			~ Should be able make a Roll call
+			~ Should be able to view all students' result in his/her class
+			~ Should be able to interact with students' parents(OPTIONAL)
+
+		Model: 
+			~ Name
+			~ Email
+			~ Password
+			~ Category
+			~ Role
+			~ Class Administered #R
+			~ Class Teaching #R
+			~ Courses
+			~ Active
+			
+	^ Administrator
+		Activities:
+			~ Should be able to use CRU operations for teachers
+			~ Should be able manage teachers' and students' activities
+			~ Should be able to broadcast information through out the application
+			~ Should be able to manage applicants' requests (admissions)
+			~ Should be able to assign form masters to classes
+			~ Should be able to assign teachers to subjects
+
+		Model:
+			~ Name
+			~ Email
+			~ Password
+			~ Role
+			~ Category
+	^ Teacher
+		Activities:
+			~ Should be able to upload students' score to their classes
+
+		Model: 
+			~ Name
+			~ Email
+			~ Password
+			~ Category
+			~ Role
+			~ Class Teaching #R
+			~ Courses
+			~ Active
+
+
+***************************************************************************** OTHER MODELS ***********************************************************************
+
+Class: 
+	~ Name
+	~ Students #R
+	~ Administrator #R
+
+Results: 
+	~ Student #R
+	~ Administrator #R
+	~ Courses 
+	~ Teacher #R
+
+************************************************************************** SIGNING OVERVIEW ***********************************************************************
+
+× Student:
+	Required Credentials:
+			~ Full name*
+			~ Date Of Birth*
+			~ Current class*
+			~ Parent's number*
+			~ Email
+			~ Faction*
+
+× Parent:
+
+	Required Credentials:
+			~ Full name
+			~ Email
+			~ Password
+			~ Number
+
+× Staff:
+	^ Super Administrator:
+		Required Credentials:
+			~ Email
+			~ Password
+			~ Role
+			~ Category
+
+	^ Administrator:
+		Required Credentials:
+			~ Name
+			~ Email
+			~ Password
+			~ Role
+			~ Category
+
+	^ Teacher:
+		Required Credentials:
+			~ Name
+			~ Email
+			~ Password
+			~ Role
+			~ Category
+			~ Class teaching [] #R
+			~ Courses {}
+	
+
+
+******************************************************************* AUTHENTICATION OVERVIEW ***********************************************************************
+
+× Student Authentication:
+	Required Credentials:
+			~ Student Id
+			~ Password
+
+× Parent:
+	Authentication Credentials:
+			~ Email
+			~ Password
+
+× Staff:
+	Authentication Credentials:
+			~ Email
+			~ Password
+
+
+	
+
+© FAMTech  2🔵24
