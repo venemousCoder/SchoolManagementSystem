@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const passportMongoose = require('passport-mongoose');
+const passportMongoose = require('passport-local-mongoose');
 
 const parentSchema = new mongoose.Schema({
     name:{
@@ -23,6 +23,8 @@ const parentSchema = new mongoose.Schema({
 },{
     timestamps: true,
 });
+
+mongoose.plugin(passportMongoose)
 
 const Parent = mongoose.model('Parent', parentSchema);
 

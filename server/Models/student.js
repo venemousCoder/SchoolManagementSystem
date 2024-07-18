@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const passportMongoose = require('passport-local-mongoose');
 
 const studentSchema = new mongoose.Schema({
     name: {
@@ -50,6 +51,8 @@ const studentSchema = new mongoose.Schema({
 }, {
     timestamps: true,
 });
+
+mongoose.plugin(passportMongoose)
 
 const Student = mongoose.model('Student', studentSchema)
 

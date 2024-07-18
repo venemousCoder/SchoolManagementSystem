@@ -4,7 +4,7 @@
   "description": "A robust SMS that eases the workflow of stakeholders in a school",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon server/index.js",
     "test": "jest run"
   },
   "repository": {
@@ -26,6 +26,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.5.1",
     "passport": "^0.7.0",
+    "passport-local-mongoose": "^8.0.0",
     "passport-mongoose": "^0.0.1"
   }
 }
