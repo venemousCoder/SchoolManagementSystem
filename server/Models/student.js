@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const passportMongoose = require('passport-local-mongoose');
 
 const studentSchema = new mongoose.Schema({
-    name: {
+    username: {
         type: String,
         required: [true, "name must be provided"],
 
@@ -16,17 +16,19 @@ const studentSchema = new mongoose.Schema({
 
     active: {
         type: Boolean,
-        required: true
-
+        required: true,
+       default:true
 
     },
     currentClass: {
         type: String,
-        required: true
+        required: true,
+       
     },
     category: {
         type: String,
-        required: true
+        required: true,
+        default:"student"
     },
     stats: {
         daysPresnt: Number,
@@ -37,22 +39,19 @@ const studentSchema = new mongoose.Schema({
     ,
     faction: {
         type: String,
-        required: false
+        required: true
     },
     results: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Results'
+        type:[mongoose.Schema.Types.ObjectId],
+        ref: 'Results',
+        default:[]
     },
-    active: {
-        type: Boolean,
-        required: true
-    }
-
+    
 }, {
     timestamps: true,
 });
 
-mongoose.plugin(passportMongoose)
+studentSchema.plugin(passportMongoose)
 
 const Student = mongoose.model('Student', studentSchema)
 

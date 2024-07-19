@@ -27,6 +27,7 @@
     "mongoose": "^8.5.1",
     "passport": "^0.7.0",
     "passport-local-mongoose": "^8.0.0",
-    "passport-mongoose": "^0.0.1"
+    "passport-mongoose": "^0.0.1",
+    "xlx": "^1.0.0"
   }
 }
